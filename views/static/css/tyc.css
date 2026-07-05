@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Chakra%20Petch:700|Chakra%20Petch:400');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Chakra Petch';
+  font-weight: 700;
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.135rem; /* 21.28px */}
+
+small {font-size: 0.750rem;}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    font-family: 'Chakra Petch';
+    font-weight: 400;
+    background-color: var(--background);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    overflow-x: hidden;
+    color: var(--text);
+}
+
+
+a{
+    color: var(--accent);
+}
+
+header{
+    height: 240px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .logo{
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+
+        .logo-img{
+            width: 120px;
+            height: 100%;
+            background-image: url("../img/maproom/maproom_icono.svg");
+            background-color: white;
+            border: solid 3px var(--accent);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 500px;
+            /* border: solid 3px blue; */
+        }
+    }
+    
+
+    .title{
+        height: 30%;
+        width: 100%;
+        /* border: solid 3px red; */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+}
+
+main{
+    height: 75%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    .terms-conditions{
+        width: 75%;
+        height: 100%;
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: left;
+        text-wrap: balance;
+        line-height: 1.5em;
+        /* border: solid 3px lime; */
+    }
+
+    aside{
+        width: 25%;
+        height: 100%;
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: left;
+        position: sticky;
+        top: 0;
+        /* border: solid 3px red; */
+    }
+}

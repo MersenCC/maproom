@@ -1,0 +1,19 @@
+
+.boton-click{
+    border-radius: 12px;
+    font-size: 2em;
+    border: 1.2px solid var(--accent);
+    width: 70%;
+    height: 45px;
+    margin-bottom: 20px;
+    margin-left: 1.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-click:hover{
+    cursor: pointer;
+    background: white;
+    color: black;
+}

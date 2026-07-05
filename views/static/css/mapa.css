@@ -1,0 +1,298 @@
+@import url(root.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --negro: rgba(0, 0, 0, 0.856);
+    --blanco: rgb(255, 255, 255);
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background);
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.visible {
+    display: flex !important;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    .navegar {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.678);
+        z-index: 3;
+
+        .posiciones {
+            width: 100%;
+            min-height: 65%;
+            display: flex;
+            justify-content: center;
+            gap: 200px;
+
+            .inicio {
+                width: 21.875rem;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: top;
+                align-items: center;
+                background-color: rgb(241, 241, 241);
+                border: solid 0.125rem var(--negro);
+                border-radius: 1.25rem;
+            }
+
+            .destino {
+                width: 21.875rem;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: top;
+                align-items: center;
+                background-color: rgb(241, 241, 241);
+                border: solid 0.125rem var(--negro);
+                border-radius: 1.25rem;
+            }
+
+            span {
+                margin-top: 7%;
+                font-size: 1.5em;
+                font-weight: bolder;
+            }
+
+            input {
+                width: 80%;
+                height: 40px;
+                margin-top: 7%;
+                font-size: 1.5em;
+                font-weight: bolder;
+                outline: none;
+                border: solid 0.125rem var(--negro);
+                border-radius: 0.625rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .mapa {
+        position: absolute;
+        left: -10rem;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+
+        img {
+            position: absolute;
+           
+
+            transition: transform 0.2s;
+
+
+        }
+
+        .p1 {
+            left: 10rem;
+
+        }
+
+        .p2 {
+            left: -30rem;
+            top: -15rem;
+        }
+        .pb{
+            left: 5rem;
+            top: -15rem;
+        }
+        .segundaImg {
+            z-index: 2;
+            display: none;
+        }
+
+        .fondo {
+            z-index: 1;
+        }
+    }
+
+    .buscador {
+        position: fixed;
+        top: 1%;
+        width: 30%;
+        height: 5.3%;
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+
+        button {
+            display: none;
+        }
+    }
+
+    .atras {
+        position: fixed;
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-top: 0.3rem;
+        border: solid 0.125rem #FC6241;
+        border-radius: 0.625rem;
+        background-color: #FC6241;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: 0.4rem;
+        z-index: 4;
+        color: white;
+        i {
+            font-size: 2rem;
+        }
+    }
+
+    .atras:hover {
+        cursor: pointer;
+        background-color: #fff;
+        color: #17212b;
+    }
+
+    .parte-izquierda {
+        position: fixed;
+        width: 7%;
+        height: 100%;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.5%;
+
+        .reset-zoom {
+            width: 2.5rem;
+            height: 2.5rem;
+            border: solid 0.125rem #FC6241;
+            border-radius: 0.625rem;
+            background-color: #FC6241;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8em;
+            font-weight: bolder;
+            margin-left: 0.4rem;
+            color: white;
+            i {
+                font-size: 1em;
+            }
+        }
+
+        .reset-zoom:hover {
+            cursor: pointer;
+            background-color: #fff;
+                color: #17212b;
+        }
+
+        .plantas {
+            width: 2.1rem;
+            min-height: 4.0625rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3125rem;
+            margin-left: 0.5rem;
+
+            .piso {
+                width: 2.5rem;
+                height: 2.5rem;
+                border: solid 0.125rem #FC6241;
+                border-radius: 0.625rem;
+                background-color: #FC6241;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.8em;
+                font-weight: bolder;
+                color: white;
+            }
+
+            .piso:hover {
+                cursor: pointer;
+                background-color: #fff;
+                color: #17212b;
+            }
+        }
+    }
+
+    .puntos-interes {
+        position: fixed;
+        min-width: 10%;
+        height: 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #FC6241;
+        border: solid 0.125rem #FC6241;
+        border-radius: 0.9375rem;
+        gap: 1.25rem;
+        bottom: 2.5%;
+        color: white;
+        .punto {
+            width: 3.125rem;
+            height: 3.125rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        i {
+            font-size: 2.3em;
+        }
+
+    }
+}
+
+.puntos-interes:hover {
+    background-color: #fff;
+    color: #17212b;
+}
+
+area {
+    cursor: pointer;
+}
+
+.boton {
+    background-color: #FC6241;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    width: 8rem;
+    height: 2rem;
+    display: flex;
+    margin-top: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #17212b;
+}

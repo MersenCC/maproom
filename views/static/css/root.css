@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+:root,
+:root.light {
+    --text: #19181a;
+    --textOtroModeLige: rgba(0, 0, 0, 0.493);
+    --background: #F4F4F4;
+    --header: #2c3e50;
+    --footer: #2c3e50;
+    --Rojo: #ff6060;
+    --Amarillo: #FFFF00;
+    --Verde: #03aa03;
+  }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #e8e6e6;
+        --textOtroModeLige: rgba(255, 255, 255, 0.493);
+        --background: #2b2a2a;
+        --header: #171717;
+        --footer: #171717;
+        --Rojo: #ff6060;
+        --Amarillo: #ffd760;
+        --Verde: #9cff60;
+    }
+}

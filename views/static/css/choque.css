@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-main{
+    height: auto;
+    min-height: 70vh;
+    max-width: 120vh;
+    padding: 3rem;
+    border: 2px solid #aaa;
+    border-radius: 2rem;
+}
+
+.content-main h1{
+    font-size: 4em;
+    text-align: center;
+}
+
+.content-main .box-content{
+    width: 100%;
+    margin: 2rem 0 ;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.content-main .box-content .box-input{
+    height: 100%;
+    width: 80vh;
+}
+
+.content-main .box-content .box-input input{
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    background: none;
+    outline: none;
+    border: 2px solid #aaa;
+    border-radius: 2rem 0 0 2rem;
+    color: #000;
+    font-size: 16px;
+}
+
+.content-main .box-content .box-select{
+    height: 100%;
+    width: 20vh;
+}
+
+.content-main .box-content .box-select select{
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: 2px solid #aaa;
+    border-radius: 0 2rem 2rem 0;
+    padding: 1rem;
+}
+
+.content-main .box-button{
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.content-main .box-button button{
+    height: 100%;
+    width: 20vh;
+    background: none;
+    outline: none;
+    border-radius: 2rem;
+    border: 2px solid #aaa;
+    color: black;
+    font-size: 16px;
+}
+
+.content-main .box-button button:hover{
+    cursor: pointer;
+}
+
+.content-main .box-text{
+    margin-top: 6vh;
+    height: auto;
+    width: 100%;
+    padding: 0 5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.content-main .box-text p{
+    text-align: center;
+}

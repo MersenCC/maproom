@@ -1,0 +1,119 @@
+@import url(./carta.css);
+@import url(./input.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+
+    .img {
+        background-image: url(../img/maproom/maproom_icono.svg);
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 50px;
+    }
+}
+
+main {
+    height: 350px auto;
+    .box {
+        text-align: center;
+        margin: 0 60px 16px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .subtitulo {
+            font-size: 24px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .input {
+            border-radius: 5px;
+            padding: 0 10px;
+            color: black;
+        }
+
+    }
+
+    .separacion {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 44px;
+        font-size: 28px;
+        gap: 15px;
+    }
+
+    .box-inferior{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+.text-register{
+    margin:  0 0 2rem 4rem;
+}
+
+footer{
+    text-align: center;
+    margin: 0 50px;
+    
+}
+.boton-click{
+    border-radius: 12px;
+    font-size: 2em;
+    border: 1.2px solid var(--accent);
+    width: 70%;
+    height: 45px;
+    margin-bottom: 20px;
+    margin-left: 1.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent);
+}
+
+.boton-click:hover{
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+.boton{
+    border-radius: 12px;
+    font-size: 2em;
+    border: 1.2px solid var(--accent);
+    width: 70%;
+    height: 45px;
+    margin-bottom: 20px;
+    margin-left: 1.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+.boton:hover{
+    cursor: pointer;
+    background: white;
+    color: black;
+}

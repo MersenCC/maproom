@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Basic:700|Basic:400');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;    
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+.content-main {
+    position: relative;
+    width: 90%; 
+    max-width: 600px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; 
+}
+
+.contentAsignar {
+    min-height: 25rem;
+    height: auto;
+    width: 30rem;
+    padding: 1rem;
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+}
+
+.contentAsignar h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.contentAsignar .box-content {
+    width: 100%;
+    margin: 2rem 0;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.contentAsignar .box-content .box-input {
+    height: 100%;
+    width: 80%;
+}
+
+.contentAsignar .box-content .box-input input {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    background: none;
+    outline: none;
+    border: 1.2px solid var(--accent);
+    border-radius: 2rem 0 0 2rem;
+    color: var(--text);
+    font-size: 16px;
+}
+.contentAsignar .box-content .box-input input::placeholder{
+    color: var(--text);
+}
+
+.contentAsignar .box-content .box-select {
+    height: 100%;
+    width: 20%;
+}
+
+.contentAsignar .box-content .box-select select {
+    height: 100%;
+    width: 100%;
+    background: var(--background);
+    outline: none;
+    border: 1.2px solid var(--accent);
+    border-radius: 0 2rem 2rem 0;
+    padding: 1rem;
+    color: var(--text);
+    
+}
+.contentAsignar .box-content .box-select select:hover{
+    border: 1.2px solid var(--accent);
+}
+.contentAsignar .box-button {
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentAsignar .box-button button {
+    align-items: center;
+  background: none;
+  border-radius: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  border: 1.2px solid var(--accent);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+.contentAsignar .box-button button:hover {
+    background-color: #fff;
+    color: #17212b;
+  }
+.contentAsignar .box-text {
+    margin-top: 6vh;
+    height: auto;
+    width: 100%;
+    padding: 0 5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.contentAsignar .box-text p {
+    text-align: center;
+}
+@media (width<=1026px) {
+    .file .bienvenida {
+        display: none; 
+    }
+    .card-bienvenida {
+        width: 90%; 
+        max-width: 400px; 
+        text-align: center;
+        margin: 4rem auto; 
+    }
+    .content-main {
+        position: relative;
+        width: 90%; 
+        max-width: 550px; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto; 
+    }
+    
+    .contentAsignar {
+        margin: 2rem auto; 
+        width: 90%; 
+        max-width: 600px; 
+        height: auto;
+        min-height: 50vh;
+        border: 2px solid var(--accent);
+        border-radius: 20px;
+    }
+}

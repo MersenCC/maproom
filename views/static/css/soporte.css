@@ -1,0 +1,237 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    background-color: var(--background);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    padding: 20px 0;
+    text-align: center;
+    background-color: var(--header);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 1.5px 6px var(--accent);
+    transition: .5s;
+}
+header:hover {
+    box-shadow: 0 6px 6px var(--accent);
+}
+.logo img {
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s;
+    filter: drop-shadow(0 11px 2.6px rgba(0, 0, 0, 0.8));
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+main {
+    padding: 20px 0;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.welcome h1 {
+    color: var(--accent);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.welcome p {
+    font-size: 1.1em;
+    color: var(--text);
+}
+
+.faq {
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    transition: background-color 0.3s;
+}
+
+.faq-item:hover {
+  
+    border-radius: 10px;
+}
+
+.faq-item h3 {
+    margin: 0;
+    color: var(--accent);
+    font-size: 1.2em;
+}
+
+.contact, .resources, .feedback {
+    margin-bottom: 40px;
+}
+
+.contact p {
+    margin: 10px 0;
+}
+
+.resources ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resources li {
+    margin-bottom: 10px;
+}
+
+.resources a {
+    font-weight: bold;
+}
+
+.feedback h2 {
+    font-size: 2em;
+    color: var(--accent);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.feedback form {
+    background: var(--footer);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--colorWhite);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--colorWhite);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* FOOTER */
+.footer {
+    font-family: 'Segoe UI';
+    width: 100%;
+    height: 20%;
+    padding: 40px 0;
+    background-color: var(--footer);
+  }
+  
+  .footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    /* color: #4b4c4d; */
+  }
+  
+  .footer .social a {
+    font-size: 1.4rem;
+    color: var(--colorWhite);
+    border: 1px solid var(--accent);
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+  }
+  
+  .footer .social a:hover {
+    transition: .7s;
+    opacity: 1;
+    background-color: var(--accent);
+    color: #ffffffc7;
+    border-color: rgb(255, 255, 255);
+  }
+  
+  .footer ul {
+    color: white;
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  
+  .footer ul a {
+    color: var(--colorWhite);
+    text-decoration: none;
+    opacity: 0.8;
+  }
+  
+  .footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+  }
+  
+  .footer ul a:hover {
+    opacity: 1;
+    transition: .5s;
+  }
+  
+  .footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--colorWhite);
+  }
+  
