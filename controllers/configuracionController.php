@@ -1,0 +1,23 @@
+<?php
+
+	// crea un usuario
+	$users = new User();
+
+	// crea el objeto con la vista
+	$tpl = new Kiwi("configuracion");
+
+	// carga la vista
+	$tpl->loadTPL();
+
+	// array para pasar variables a la vista
+	// $vars = ["CANT_USERS" => $users->getCantUsers()];
+
+
+	// reemplaza las variables en la vista
+
+
+	// imprime en la página la vista
+	$tpl->printTPL();
+
+	
+ ?>
