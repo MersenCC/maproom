@@ -1,0 +1,65 @@
+@extern('header')
+
+<head>
+    <link rel="stylesheet" href="views/static/css/miperfil.css">
+</head>
+<div id="fog">
+        <div id="popup">
+            <div id="popup__title">
+                <div id="popup__close">X</div>
+            </div>
+            <div id="popup__description">¿Realmente deseas darte de baja de Maproom?</div>
+            <div id="popup__control">
+                <a href="?slug=abandonar">
+                    <div id="popup__accept" class="btn__accept">Aceptar</div>
+                </a>
+                <div id="popup__cancel" class="btn__cancel">Cancelar</div>
+            </div>
+        </div>
+    </div>
+@extern('navbar')
+    
+
+    <div id="wrapper">
+        
+
+        <main id="content">
+            <div id="profile-card">
+                <div id="profile-image">
+                    <img src="{{AVATAR}}" alt="Avatar">
+                </div>
+                <div id="profile-details">
+                    <h1>Perfil</h1>
+                    <form action="" method="POST">
+                        <input type="text" name="txt_first_name" value="{{NOMBRE}}" placeholder="Nombre" required>
+                        <input type="text" name="txt_last_name" value="{{APELLIDO}}" placeholder="Apellido" required>
+                        <input type="submit" name="btn_guardar" value="Guardar" class="btn__save">
+                        <div class="error-message">{{MSG_REGISTER_ERROR}}</div>
+                    </form>
+                    <button id="leaveout">Dar de baja</button>
+                </div>
+            </div>
+        </main>
+
+       
+    </div>
+
+    <script type="text/javascript">
+        leaveout.addEventListener("click", e => {
+            fog.style.display = "flex";
+        });
+
+        function closePopUp() {
+            fog.style.display = 'none';
+        }
+
+        popup__close.addEventListener("click", e => {
+            closePopUp();
+        });
+
+        popup__cancel.addEventListener("click", e => {
+            closePopUp();
+        });
+    </script>
+</body>
+</html>

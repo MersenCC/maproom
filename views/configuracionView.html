@@ -1,0 +1,39 @@
+@extern('header')
+<head>
+    <title>Configuracion | Maproom</title>
+    <link rel="stylesheet" href="views/static/css/configuracion.css">
+    <script src="https://kit.fontawesome.com/5d72166fb5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="c1">
+                <p id="profile"><i class="fa-regular fa-user" style="color: #ffffff;"></i>Perfil</p>
+                <p id="notifications"><i class="fa-regular fa-bell" style="color: #ffffff;"></i>Notificaciones</p>
+                <p id="Estado Solicitud"><i class="fa-regular fa-newspaper" style="color: #ffffff;"></i>Ver Estado de solicitud</p>
+                <p id="general"><i class="fa-solid fa-gear" style="color: #ffffff;"></i>General</p>
+            </div>
+            <div class="c2">
+                <div id="content" class="s2">
+                    <div class="s1">
+                        <span>Configuracion de perfil</span>
+                        <img src="https://cdn-icons-png.flaticon.com/512/6676/6676023.png" alt="user image">
+                    </div>
+                    <form action="#">
+                        <label for="pass">Contraseña</label><br>
+                        <input type="password" name="pass" id="pass"><br>
+                       
+                        <div class="but">
+                            <button type="submit" class="save">Guardar cambios</button>
+                            <button type="reset" class="exit">Cancelar</button>
+                        </div>
+                    </form>
+                    <button type="submit" class="solicitud">Enviar Solicitud para institucion</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="configuracion.js"></script>
+</body>
+</html>

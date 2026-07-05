@@ -1,0 +1,74 @@
+@extern('header')
+
+<head>
+    <link rel="stylesheet" href="views/static/css/soporte.css">
+    <title>Soporte | Maproom</title>
+</head>
+    <header>
+        <div class="container">
+            <a href="landing" class="logo">
+                <img src="views/static/img/maproom/maproom_icono.svg" alt="Logo de Maproom">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="welcome">
+                <h1>Bienvenido al Centro de Soporte de Maproom</h1>
+                <p>Estamos aquí para ayudarte a sacar el máximo provecho de nuestros servicios. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nosotros.</p>
+            </section>
+
+            <section class="faq">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-item">
+                    <h3>¿Cómo puedo iniciar sesión en mi cuenta?</h3>
+                    <p>Visita nuestra página de inicio de sesión y usa tu dirección de correo electrónico y contraseña.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cómo puedo tener mi institucion en Maproom?</h3>
+                    <p>Dirígete a tu perfil, veras un apartado de configuracion, deberas entrar y dirigirte al apartado de "Mi cuenta" donde veras una opcion de enviar solicitud.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Qué hago si encuentro un error en el mapa?</h3>
+                    <p>Envíanos un reporte a través del formulario de contacto y proporcionaremos una solución lo antes posible.</p>
+                </div>
+            </section>
+
+            <section class="contact">
+                <h2>Contáctanos</h2>
+                <!-- <p>Correo Electrónico: <a href="mailto:soporte@maproom.com">soporte@maproom.com</a></p> -->
+                <!-- <p>Teléfono: +54 9 11 ---- ----</p> -->
+                <p>Horario de Atención: Lunes a Viernes, 9:00 AM - 6:00 PM</p>
+            </section>
+
+            <!-- <section class="resources">
+                <h2>Recursos Adicionales</h2>
+                <ul>
+                    <li><a href="#">Guías de Usuario</a></li>
+                    <li><a href="#">Tutoriales en Video</a></li>
+                    <li><a href="#">Foro de la Comunidad</a></li>
+                </ul>
+            </section> -->
+
+            <section class="feedback">
+                <h2>Déjanos tu Duda o Comentario</h2>
+                <form action="your-form-handler-url" method="post">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+        </div>
+    </main>
+@extern('footer')

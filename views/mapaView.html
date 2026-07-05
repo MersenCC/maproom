@@ -1,0 +1,134 @@
+@extern('header')
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="views/static/css/mapa.css">
+    <title>Mapas | Maproom</title>
+</head>
+
+    <main>
+        <map name="mapa" id="map">
+            <area shape="rect" coords="340,30,611,148" id="PB Escenario" onclick="desplegador(this)">
+            <area shape="rect" coords="1340,140,1400,240" id="PB Baño Mujeres(alumnos)" onclick="desplegador(this)">
+            <area shape="rect" coords="1350,248,1401,333" id="PB Baño Hombres(alumnos)" onclick="desplegador(this)">
+            <area shape="rect" coords="709,28,819,152" id="PB cuarto cooperadora" onclick="desplegador(this)">
+            <area shape="rect" coords="611,28,706,147" id="pb Cuarto Ed fisica" onclick="desplegador(this)">
+            <area shape="rect" coords="1350,333,1512,403" id="PB Fotocopiadora" onclick="desplegador(this)">
+            <area shape="rect" coords="1063,396,1187,527" id="PB Cocina" onclick="desplegador(this)">
+            <area shape="rect" coords="1063,526,1187,700" id="PB Sala de profesores" onclick="desplegador(this)">
+            <area shape="rect" coords="1063,702,1124,769" id="PB Baño de profesoras" onclick="desplegador(this)">
+            <area shape="rect" coords="1129,700,1182,735" id="PB Baño de profesores" onclick="desplegador(this)">
+            <area shape="rect" coords="1421,884,1472,990" id="PB Preseptoria pb" onclick="desplegador(this)">
+            <area shape="rect" coords="1399,1049,1510,1291" id="PB Aula(Pecera)" onclick="desplegador(this)">
+            <area shape="rect" coords="1290,1050,1391,1291" id="pb Secretaria" onclick="desplegador(this)">
+            <area shape="rect" coords="116,148,821,735" id="PB Gimnasio" onclick="desplegador(this)">
+            <area shape="rect" coords="1170,1050,1231,1117" id="PB Porteria" onclick="desplegador(this)">
+            <area shape="rect" coords="812,1050,1106,1277" id="PB Teatro" onclick="desplegador(this)">
+            <area shape="rect" coords="14,964,435,1267" id="PB Biblioteca" onclick="desplegador(this)">
+            <area shape="rect" coords="1065,768,1167,953" id="PB Aula 1" onclick="desplegador(this)">
+            <area shape="rect" coords="616,1052,800,1267" id="PB Aula 2" onclick="desplegador(this)">
+            <area shape="rect" coords="451,1050,607,1267" id="PB Aula 3" onclick="desplegador(this)">
+            <area shape="rect" coords="1170,1026,1286,1200" id="PB Entrada" onclick="desplegador(this)">
+        </map>
+        <div class="mapa" id="mapa">
+            <img class="fondo pb" usemap="#mapa" src="views/static/img/Instituciones/pisosInstituciones/RobertoArlt/PlantaBaja.jpg" id="mapa-imagen">
+            <img class="segundaImg pb" src="views/static/img/Instituciones/pisosInstituciones/RobertoArlt/baniosPlantaBaja.png" id="banio">
+            <img class="segundaImg pb" src="views/static/img/Instituciones/pisosInstituciones/RobertoArlt/escalerasPlantaBaja.png" id="escalera">
+            <img class="segundaImg pb" src="views/static/img/Instituciones/pisosInstituciones/RobertoArlt/rutaEntradaGimnasio.png" id="ruta1">
+        </div>
+        <div class="buscador">
+            <button class="boton" onclick="siguiente(0)" id="btnSig">SIGUIENTE</button>
+        </div>
+        <div class="atras" onclick="atras()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div class="parte-izquierda">
+            <div class="reset-zoom" onclick="resetZoom()">
+                <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="plantas">
+                <div class="piso" dataImage="views/static/img/Instituciones/pisosInstituciones/RobertoArlt//PlantaBaja.jpg" onclick="cambiarPiso(0)">Pb</div>
+                <div class="piso" dataImage="views/static/img/Instituciones/pisosInstituciones/RobertoArlt/PrimerPiso.jpg" onclick="cambiarPiso(1)">P1</div>
+                <div class="piso" dataImage="views/static/img/Instituciones/pisosInstituciones/RobertoArlt/SegundoPiso.jpg" onclick="cambiarPiso(2)">P2</div>
+            </div>
+        </div>
+        <div class="puntos-interes">
+            <div class="punto">
+                <i class="fa-solid fa-restroom" onclick="banitos()"></i>
+            </div>
+            <div class="punto">
+                <i class="fa-solid fa-stairs" onclick="escaleritos()"></i>
+            </div>
+        </div>
+        <div class="navegar" id="navegadorMapa">
+            <div class="posiciones">
+                <div class="inicio">
+                    <span>¿Donde Estas?</span>
+                    <input class="lugar-inicio" id="input-ubicacion" list="lugares" value="">
+                    <input type="hidden" value="" id="destino">
+                    <button class="boton" onclick="ruta()">Aceptar</button>
+                </div>
+                <datalist id="lugares">
+                    <option value="PB Escenario">
+                    <option value="PB Entrada">
+                    <option value="PB Baño Mujeres(alumnos)">
+                    <option value="PB Baño Hombres(alumnos)">
+                    <option value="PB cuarto cooperadora">
+                    <option value="pb Cuarto Ed fisica">
+                    <option value="PB Fotocopiadora">
+                    <option value="PB Cocina">
+                    <option value="PB Sala de profesores">
+                    <option value="PB Baño de profesoras">
+                    <option value="PB Baño de profesores">
+                    <option value="PB Preceptoria pb">
+                    <option value="PB Aula(Pecera)">
+                    <option value="PB Secretaria">
+                    <option value="PB Gimnasio">
+                    <option value="PB Porteria">
+                    <option value="PB Teatro">
+                    <option value="PB Biblioteca">
+                    <option value="PB Aula 1">
+                    <option value="PB Aula 2">
+                    <option value="PB Aula 3">
+                    <option value="P1 Aula 1">
+                    <option value="P1 Aula 2">
+                    <option value="P1 Preceptoria 1">
+                    <option value="P1 Sala de informatica 1">
+                    <option value="P1 Sala de informatica 2">
+                    <option value="P1 Sala de informatica 3">
+                    <option value="P1 Sala de informatica 4">
+                    <option value="P1 Sala de informatica 5">
+                    <option value="P1 Sala de Robotica">
+                    <option value="P1 Radio">
+                    <option value="P1 Preceptoria 2">
+                    <option value="P1 Sala de aceleracion">
+                    <option value="P1 Aula 3">
+                    <option value="P1 Aula 4">
+                    <option value="P1 Aula 5">
+                    <option value="P1 Aula 6">
+                    <option value="P1 Aula 7">
+                    <option value="P1 Ayudantia">
+                    <option value="P2 Aula 1">
+                    <option value="P2 Aula 2">
+                    <option value="P2 Aula 3">
+                    <option value="P2 Aula 4">
+                    <option value="P2 Aula 5">
+                    <option value="P2 Aula 6">
+                    <option value="P2 Aula 7">
+                    <option value="P2 Aula 8">
+                    <option value="P2 Aula 9">
+                    <option value="P2 Preceptoria 1">
+                    <option value="P2 Preceptoria 2">
+                    <option value="P2 Terraza">
+                    <option value="P2 Sala de musica">
+                </datalist>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="views/static/js/mapa.js"></script>
+    <script src="views/static/js/pisos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+@extern('header')
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="css/panel.css">
+</head>
+
+<div id="loading">@extern("loading")</div>
+<div id="content" style="display: none;">
+    {{USER_NAME}} <br>
+    <h1>Redirecciones</h1>
+    <h2>Paneles</h2>
+    <a href="panelAdministrador">Admin</a><br>
+    <a href="panelSelecto">Selecto</a><br>
+    <a href="panelDispositivos">Dispositivos</a><br>
+    <a href="panelTeam">Equipo</a><br>
+    <a href="eventCreate">Crear eventos</a><br>
+
+    <h2>Otros</h2>
+    <a href="perfil">Perfil</a><br>
+    <a href="estadoSolicitud">Estado de solicitud</a><br>
+    <a href="mapa">Mapa</a><br>
+    <a href="actividad">Historial</a><br>
+    <a href="logout">Logout</a><br>
+    <a href="abandonar">Abandonar</a><br>
+    <a href="navbar">NavBar</a><br>
+    <a href="estadoSolicitud">Estado solicitud</a><br>
+    <a href="registerInstitucion">Registrar institución</a><br>
+    <a href="asignarUser">Asignar usuario</a><br>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        // Muestra el mensaje de carga
+        document.getElementById('loading').style.display = 'block';
+
+        // Espera 3 segundos
+        await new Promise(resolve => setTimeout(resolve, 3000));
+
+        // Oculta el mensaje de carga
+        document.getElementById('loading').style.display = 'none';
+
+        // Muestra el contenido
+        document.getElementById('content').style.display = 'block';
+    });
+</script>

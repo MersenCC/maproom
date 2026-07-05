@@ -1,0 +1,70 @@
+@extern('header')
+
+<head>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="views/static/css/asignarUsuario.css">
+</head>
+
+@extern('navbar')
+<main class="content-main">
+    <div class="contentAsignar">
+        <form action="asignarUser" method="POST" onsubmit="return validateForm()">
+            <h1 id="form-title">ASIGNAR RANGO A USUARIO</h1>
+            <section class="box-content">
+                <div class="box-input">
+                    <input name="email" type="email" placeholder="ingresar email" required>
+                </div>
+                <div class="box-select">
+                    <select name="rango" id="rango-select" onchange="updateTitle()">
+                        <option value="">Seleccione un rango</option>
+                        <option value="selecto">Rango Selecto</option>
+                        <option value="administrador">Rango Administrador</option>
+                    </select>
+                </div>
+            </section>
+            <section class="box-button">
+                <button type="submit" name="button_solicitud">Enviar solicitud</button>
+            </section>
+            <section class="box-text">
+                <p>
+                    Para asignar un nuevo Miembro ingrese el email para promover y haz clic en
+                    "Enviar Solicitud".
+                    Asegúrate de que los Miembros asignados tengan la formación adecuada para
+                    garantizar un uso eficiente y seguro de la plataforma.</p>
+            </section>
+        </form>
+    </div>
+</main>
+</div>
+
+<script>
+    function updateTitle() {
+        const selectElement = document.getElementById('rango-select');
+        const titleElement = document.getElementById('form-title');
+
+        if (selectElement.value === "selecto") {
+            titleElement.textContent = "ASIGNAR RANGO SELECTO A USUARIO";
+        } else if (selectElement.value === "administrador") {
+            titleElement.textContent = "ASIGNAR RANGO ADMINISTRADOR A USUARIO";
+        } else {
+            titleElement.textContent = "ASIGNAR RANGO A USUARIO"; // Restablecer al título original
+        }
+    }
+
+    function validateForm() {
+        const selectElement = document.getElementById('rango-select');
+
+        if (selectElement.value === "") {
+            alert("Por favor, seleccione un rango antes de enviar el formulario.");
+            return false; // Evita que el formulario se envíe
+        }
+        return true; // Permite que el formulario se envíe
+    }
+</script>
+
+</body>
+
+</html>

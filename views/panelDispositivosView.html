@@ -1,0 +1,141 @@
+@extern('header')
+<head>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="views/static/css/panelDispositivos.css">
+</head>
+
+
+@extern('navbar')
+    <div class="contenedorPanel">
+      <div class="busquedas">
+        <div class="modoPag">
+          <!-- <button onclick="toggleDarkMode()" class=" btnModo btnModoOff material-symbols-outlined" id="switch"></button> -->
+        </div>
+        <button class="openBuscador" id="btn-abrir">Abrir buscador</button>
+        <div class="buscarInformacion">
+          <input class="searchInfo" type="search" placeholder="Buscar dispositivo">
+          <input type="submit" class="iconoInfo material-symbols-outlined" value="search">
+        </div>
+
+        <div class="buscarPaginas">
+          1-14 of 54
+          <div class="buscarPaginas">
+            <!--
+                  <button class="btnPage">Page 1 ▼</button>
+                  -->
+           
+
+          </div>
+
+
+
+          <button class="btnPageAtr">
+            <span class="material-symbols-outlined">
+              chevron_left
+            </span>
+          </button>
+          <button class="btnPageSig">
+            <span class="material-symbols-outlined">
+              chevron_right
+            </span>
+          </button>
+        </div>
+      </div>
+      <form id="miFormulario" method="POST" action="panelDispositivos">
+
+        <div class="filtros">
+          <p class="textFiltros">Ver:</p>
+          <p class="opcFiltros">
+            <a href="#" class="ahrefFiltros" data-filter="all" onclick="filtroSeleccionado(event, this)">Todos</a>
+          </p>
+          <p class="opcFiltros">
+            <a href="#" class="ahrefFiltros" data-filter="active" onclick="filtroSeleccionado(event, this)">Activos</a>
+          </p>
+          <p class="opcFiltros">
+            <a href="#" class="ahrefFiltros" data-filter="inactive" onclick="filtroSeleccionado(event, this)">Inactivos</a>
+          </p>
+        </div>
+        <div class="tabla">
+          <div class="infoTabla">
+            <table>
+              <tr class="trPrincipal">
+                <th></th>
+                <th class="tituloPrincipal">Dispositivo</th>
+                <th class="tituloPrincipal">Modificacion</th>
+                <th>Estado</th>
+              </tr>
+              {{DISPOSITIVO}}
+            </table>
+          </div>
+        </div>
+      
+      </form>
+
+    </div>
+  </div>
+
+  </div>
+
+  <script>
+    function filtroSeleccionado(event, element) {
+      // Prevenir el comportamiento por defecto del enlace
+      event.preventDefault();
+    
+      // Obtener el valor del filtro seleccionado
+      const filtro = element.getAttribute('data-filter');
+      console.log('Filtro seleccionado:', filtro);
+    
+      // Obtener todas las filas de la tabla (excepto la fila del encabezado)
+      const rows = document.querySelectorAll('.tabla table tr:not(.trPrincipal)');
+    
+      // Mostrar u ocultar filas basadas en el filtro
+      rows.forEach(row => {
+        const estado = row.getAttribute('data-status');
+        if (filtro === 'all' || estado === filtro) {
+          row.style.display = ''; // Mostrar fila
+        } else {
+          row.style.display = 'none'; // Ocultar fila
+        }
+      });
+    }
+    
+    function handleCheckboxClick(checkbox) {
+      // Obtener la fecha y hora actual en el formato deseado
+      const fechaHoraActual = new Date().toISOString().slice(0, 19).replace('T', ' ');
+  
+      // Cambia el valor del checkbox clickeado
+      checkbox.value = checkbox.checked ? 'ON' : 'OFF';
+  
+      // Crear un objeto con los datos del checkbox
+      const checkboxData = {
+        [checkbox.name]: {
+          estado: checkbox.value,
+          fechaHora: fechaHoraActual
+        }
+      };
+  
+      // Convertir el objeto a JSON
+      const checkboxDataJson = JSON.stringify(checkboxData);
+  
+      // Enviar los datos usando fetch
+      fetch('panelDispositivos', {
+        method: 'POST',
+        body: new URLSearchParams({ checkboxData: checkboxDataJson })
+      })
+        .then(response => response.text())
+        .then(result => {
+          console.log('Éxito:', result);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+  
+      location.reload();
+    }
+  </script>
+</body>
+
+</html>

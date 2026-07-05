@@ -1,0 +1,108 @@
+@extern('header')
+<head>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="views/static/css/actividad.css">
+</head>
+
+@extern('navbar')
+    <div class="controlActivity">
+      <h3>Registro de Actividad | {{INSTITUCION}}</h3>
+
+      <div class="controlActFiltros">
+        <p>Filtrar por accion: </p>
+        <select name="select">
+          <option value="value1" selected>Todo</option>
+          <option value="value2">Value 1</option>
+          <option value="value3">Value 2</option>
+          <option value="value4">Value 3</option>
+        </select>
+      </div>
+    </div>
+    <div class="audit-log">
+      {{ACTIVIDAD}}
+  </div>
+  
+    <!-- <div class="audit-log">
+      <div class="log-entry">
+        <div class="log-header">
+          <span class="user-icon"><img src="https://avatars.githubusercontent.com/u/128574534?v=4"
+              class="user-icon"></span>
+          <div class="log-info">
+            <span class="username">kairos.off</span> ha creado un canal de texto <span class="channel">#asd</span>
+            <div class="date">04/09/2024</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-header" onclick="toggleDetails(this)">
+          <span class="user-icon"><img src="https://avatars.githubusercontent.com/u/128574534?v=4"
+              class="user-icon"></span>
+          <div class="log-info">
+            <span class="username">kairos.off</span> ha creado el evento <span class="invite-code">Sayc Timbre</span>
+            <div class="date">05/08/2024</div>
+          </div>
+          <span class="toggle-icon material-symbols-outlined">
+            arrow_forward_ios
+          </span>
+        </div>
+        <div class="log-details">
+          <ol>
+            <li>Activa timbre <strong>Salida Principal</strong></li>
+            <li>Apaga luz <strong>Gimnasio</strong></li>
+            <li>Fecha de expiracion <strong>10/08/2024 23:00:00</strong></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-header" onclick="toggleDetails(this)">
+          <span class="user-icon"><img src="https://avatars.githubusercontent.com/u/128574534?v=4"
+              class="user-icon"></span>
+          <div class="log-info">
+            <span class="username">kairos.off</span> ha creado la invitación <span class="invite-code">Zzbtkc2w</span>
+            <div class="date">09/08/2024</div>
+          </div>
+          <span class="toggle-icon material-symbols-outlined">
+            arrow_forward_ios
+          </span>
+        </div>
+        <div class="log-details">
+          <ol>
+            <li>Con el código <strong>Zzbtkc2w</strong></li>
+            <li>Para el canal <strong>#police</strong></li>
+            <li>Que tiene usos <strong>ilimitados</strong></li>
+            <li>Que expira después de <strong>7 días</strong></li>
+            <li>Con invitación temporal <strong>desactivada</strong></li>
+          </ol>
+        </div>
+      </div> 
+    </div>-->
+
+  </div>
+
+  <script type="text/javascript">
+    
+
+    function toggleDetails(element) {
+      const details = element.nextElementSibling;
+      const icon = element.querySelector('.toggle-icon');
+
+      // Alternar entre mostrar y ocultar los detalles
+      if (details.style.display === "none" || details.style.display === "") {
+        details.style.display = "block";
+        element.classList.add('expanded');
+      } else {
+        details.style.display = "none";
+        element.classList.remove('expanded');
+      }
+    }
+
+  </script>
+  <script src="../js/actionsDispositivos.js"></script>
+</body>
+
+</html>

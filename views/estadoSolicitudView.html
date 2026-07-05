@@ -1,0 +1,58 @@
+@extern('header')
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="views/static/css/estadoSolicitud.css">
+</head>
+
+@extern('navbar')
+    <main>
+
+      <!-- CONTENEDOR DE LAS CARTAS -->
+      <section class="container">
+
+        <!-- CARTA INSTITUCIONAL -->
+        {{SOLICITUD}}
+
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function hola(element) {
+      const id = element.id; // Obtiene el id del botón
+      const value = element.value;
+      const data = {
+        institucionId: id,
+        institucionValue: value
+      };
+
+
+      fetch('estadoSolicitud', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.text()) // Obtiene el texto completo de la respuesta
+      .then(text => {
+        console.log('Respuesta del servidor:', text); // Muestra el texto de la respuesta
+        try {
+          const jsonData = JSON.parse(text); // Intenta parsear la respuesta como JSON
+          console.log('Datos JSON:', jsonData);
+        } catch (error) {
+          console.error('Error al parsear el JSON:', error);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  </script>
+
+
+</body>
+
+</html>

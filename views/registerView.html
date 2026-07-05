@@ -1,0 +1,106 @@
+@extern('header')
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio</title>
+	<link rel="stylesheet" href="views/static/css/register.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+		<path fill="#000021" fill-opacity="1"
+			d="M0,128L24,133.3C48,139,96,149,144,128C192,107,240,53,288,48C336,43,384,85,432,85.3C480,85,528,43,576,53.3C624,64,672,128,720,170.7C768,213,816,235,864,208C912,181,960,107,1008,80C1056,53,1104,75,1152,96C1200,117,1248,139,1296,154.7C1344,171,1392,181,1416,186.7L1440,192L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z">
+		</path>
+	</svg>
+	<section class="file">
+
+		<section class="bienvenida">
+            <div class="card-bienvenida">
+                
+                <h1>Bienvenido</h1>
+               
+
+                <div class="image">
+                    <div class="img"></div>
+                </div>
+                <div class="btn">
+                    <h3>Maproom</h3>
+                    <h4>Es una aplicación la cual proporciona un mapa 2D interactivo con un control de dispositivos electrónicos para instituciones.
+                    </h4>
+                </div>
+            </div>
+        </section>
+
+
+
+		<section class="formulario">
+
+			<div class="card-formulario">
+				<h2>Crear perfil</h2>
+				<form action="register" method="POST">
+					<div class="table">
+						<div class="box-input-table">
+							<input type="text" name="nombre" required>
+							<label for="">Nombre</label>
+							<i class="fa-solid fa-user icono"></i>
+						</div>
+						<div class="box-input-table">
+							<input type="text" name="apellido" required>
+							<label for="">Apellido</label>
+							<i class="fa-solid fa-user icono"></i>
+						</div>
+						<div class="box-input-table">
+							<input type="text" name="telefono" maxlength="10" required>
+							<label for="">Telefono</label>
+							<i class="fa-solid fa-phone icono"></i>
+						</div>
+						<div class="box-input-table">
+							<input type="text" name="dni" maxlength="10" required>
+							<label for="">Dni</label>
+							<i class="fa-solid fa-id-card icono"></i>
+						</div>
+					</div>
+					<div class="box-input">
+						<input type="date" name="nacimiento "placeholder="Fecha de nacimiento" required>
+						<i class="fa-solid fa-envelope icono"></i>
+					</div>
+					<div class="box-input">
+						<input type="email" name="email" required>
+						<label for="">Email</label>
+						<i class="fa-solid fa-envelope icono"></i>
+					</div>
+					<div class="box-input">
+						<input type="password" name="txt_pass" required>
+						<label for="">Contraseña</label>
+						<i class="fa-solid fa-lock icono"></i>
+					</div>
+					<div class="inferior">
+						<div class="tyc">
+							<input type="checkbox" name="tyc" required>
+							<p>Aceptar <a href="tyc">Terminos y Condiciones</a></p>
+						</div>
+						<div class="error">
+							<p class="error">{{MSG_REGISTER_ERROR}}</p>
+						</div>
+
+					</div>
+					<div class="box-btn">
+						<button class="boton-click" type="submit" name="btn_register" value="Ingresar">Registrarse</button>
+					</div>
+					<div class="text">
+						<p>¿Ya tienes cuenta? <a href="login">Ingresar</a></p>
+						<p>Volver <a href="ingreso">Menu</a></p>
+					</div>
+				</form>
+			</div>
+		</section>
+		</div>
+		<script src="views/static/js/archivo.js"></script>
+		<script src="views/static/js/document.js"></script>
+</body>
+</html>

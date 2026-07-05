@@ -1,0 +1,94 @@
+<head>
+    <link rel="stylesheet" href="views/static/css/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <input type="checkbox" id="check" />
+
+    <header>
+        <label for="check">
+            <div class="menu">
+                <i class="fas fa-bars" id="sidebar_btn"></i>
+            </div>
+        </label>
+        <div class="left_area">
+            <span><a>Map</a>Room</span>
+        </div>
+        <div class="right_area">
+            <a href="logout" class="logout_btn">Logout</a>
+        </div>
+    </header>
+
+    <div class="mobile_nav">
+        <div class="nav_bar">
+            <img src="{{AVATAR}}" class="mobile_profile_image" alt="Avatar de usuario" />
+            <i class="fa fa-bars nav_btn"></i>
+        </div>
+        <div class="mobile_nav_items">
+            <a href="panelTeam"><i class="fas fa-desktop"></i><span>Gestionar equipo</span></a>
+            <a href="mapa"><i class="fas fa-cogs"></i><span>Gestionar Mapa</span></a>
+            <a href="panelDispositivos"><i class="fas fa-table"></i><span>Panel Dispositivos</span></a>
+            <a href="#"><i class="fas fa-th"></i><span>Crear eventos</span></a>
+            <a href="#"><i class="fas fa-info-circle"></i><span>Cantidad vistas</span></a>
+            <a href="#"><i class="fas fa-sliders-h"></i><span>Actividad</span></a>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="profile_info">
+            <img src="{{AVATAR}}" class="profile_image" alt="Avatar de usuario" />
+            <h4><a href="#">{{NOMBRE}} {{APELLIDO}}</a></h4>
+        </div>
+        <a href="panelTeam"><i class="fas fa-desktop"></i><span>Gestionar equipo</span></a>
+        <a href="mapa"><i class="fas fa-cogs"></i><span>Gestionar Mapa</span></a>
+        <a href="panelDispositivos"><i class="fas fa-table"></i><span>Panel Dispositivos</span></a>
+        <a href="#"><i class="fas fa-th"></i><span>Crear eventos</span></a>
+        <a href="#"><i class="fas fa-info-circle"></i><span>Cantidad vistas</span></a>
+        <a href="#"><i class="fas fa-sliders-h"></i><span>Actividad</span></a>
+        <!-- ADICIONALES UNICAMENTE MIENTRAS ESTAMOS EN BETA -->
+        <a href="panelSelecto"><i class="fas fa-sliders-h"></i><span>Selecto</span></a>
+       
+
+    </div>
+    <div class="content">
+        <div class="card">
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged.
+            </p>
+        </div>
+        <div class="card">
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged.
+            </p>
+        </div>
+        <div class="card">
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only
+                five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged.
+            </p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".nav_btn").click(function () {
+                $(".mobile_nav_items").toggleClass("active");
+            });
+        });
+    </script>

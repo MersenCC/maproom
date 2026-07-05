@@ -1,0 +1,298 @@
+@extern('header')
+<head>
+<link rel="stylesheet" href="views/static/css/styleLanding.css">
+</head>
+
+  <section class="header" id="header">
+    <div class="contLogo">
+      <img src="views/static/img/maproom/maproom_icono.svg">
+    </div>
+    <div class="contBotones">
+      <a href="#servicios">
+        <button class="button-35" role="button">Servicios</button>
+      </a>
+      <a href="#footer">
+        <button class="button-35" role="button">Contacto</button>
+      </a>
+      <a href="ingreso">
+        <button class="button-28" role="button">Ingresar</button>
+      </a>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="headerMain" id="inicio">
+      <div class="titleHeaderMain">
+        <h1>Sumate al equipo ! <br>
+          <!-- Somos <a class="txtNaranja txtSombra">Maproom</a> -->
+        </h1>
+        <div class="descHeader">
+          Equipo dedicado a facilitar la navegacion en tu institucion al igual que proporcionarte un
+          controlador de dispositivos electricos/electronicos.
+        </div>
+        <div class="btnHeaderMain">
+          <a href="register">
+            <button class="btnHeaderMainDes learn-more">
+              <span aria-hidden="true" class="circle">
+                <span class="icon arrow"></span>
+              </span>
+              <span class="btnHeaderMainDes-text">Unirme</span>
+            </button>
+
+          </a>
+
+        </div>
+
+      </div>
+      <div class="headerImgDer">
+        <img src="views/static/img/maproom/maproom_logo1.svg" alt="Logotipo de Maproom">
+      </div>
+
+    </div>
+    <div id="nosotros" class="contSlider">
+      <div class="sliderMain">
+        <img src="views/static/img/iconosRand/slider1.svg" alt="Portada de Maproom">
+        <img src="views/static/img/iconosRand/slider3.svg" alt="Portada de Maproom">
+        <img src="views/static/img/maproom/maproom_logo1.svg" alt="Portada de Maproom">
+        <img src="views/static/img/iconosRand/slider4.svg" alt="Portada de Maproom">
+        <img src="views/static/img/iconosRand/slider5.svg" alt="Portada de Maproom">
+        <img src="views/static/img/iconosRand/slider6.svg" alt="Portada de Maproom">
+      </div>
+    </div>
+
+    <div class="contMain" id="servicios">
+      <a href="#soporte" class="boxContMain">
+        <div class="iconBoxContMain">
+          <span class="iconoGrande">
+            construction
+          </span>
+        </div>
+        <div class="titleBoxMain">Soporte y Atencion</div>
+        <div class="txtBoxMain">Para nosotros es importante la respuesta rapida a tus consultas.</div>
+      </a>
+
+      <a href="#web" class="boxContMain">
+        <div class="iconBoxContMain">
+          <span class="iconoGrande">
+            captive_portal
+          </span>
+        </div>
+        <div class="titleBoxMain">Vista web</div>
+        <div class="txtBoxMain">Una web es modernizada, con un diseño agradable a la vista.</div>
+      </a>
+
+      <a href="#organizate" class="boxContMain">
+        <div class="iconBoxContMain">
+          <span class="iconoGrande">
+            computer
+          </span>
+        </div>
+        <div class="titleBoxMain">Organizate</div>
+        <div class="txtBoxMain">Actualizate y modernizate con nosotros para una guia facil en tu institucion.</div>
+      </a>
+
+    </div>
+
+    <div class="contMain" id="soporte">
+      <div class="headerImgDer">
+        <img src="views/static/img/iconosRand/atencion.svg" alt="Logotipo de Maproom">
+      </div>
+      <div class="titleHeaderMain">
+        <h1>Soporte y Atencion al cliente</h1>
+        <div class="descHeader">
+          El equipo de Soporte y Atencion al cliente de Maproom es totalmente calificado para responder las dudas de
+          cada uno de nuestros usuarios, contamos con una atencion al cliente las 24hs del dia, de Domingos a Lunes.
+        </div>
+        <div class="btnHeaderMain">
+          <a href="soporte">
+            <button class="btnHeaderMainDes learn-more">
+              <span aria-hidden="true" class="circle">
+                <span class="icon arrow"></span>
+              </span>
+              <span class="btnHeaderMainDes-text">Contactar</span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contMain" id="web">
+      <div class="titleHeaderMain">
+        <h1>Vista web</h1>
+        <div class="descHeader">
+          Para nosotros es importante la comodidad del usuario al momento de estar en nuestras paginas, por lo tanto nos
+          matenemos con un diseño comodo y relajante al ojo humano, con una posibilidad de intercambiar entre el Modo
+          Oscuro y Modo Claro.
+        </div>
+      </div>
+      <div class="headerImgDer">
+        <img src="views/static/img/iconosRand/vistaWeb.svg" alt="Logotipo de Maproom">
+      </div>
+    </div>
+
+    <div class="contMain" id="organizate">
+      <div class="headerImgDer">
+        <img src="views/static/img/iconosRand/controlPanel.svg" alt="Logotipo de Maproom">
+      </div>
+      <div class="titleHeaderMain">
+        <h1>Organizate</h1>
+        <div class="descHeader">
+          Sumate a Maproom para obtener una mejor organizacion de tu institucion, mas comoda y segura.
+        </div>
+      </div>
+    </div>
+
+    <div class="contMain">
+      <div class="boxContMainCantUsers">
+        <div class="cantUsers">
+          <p class="txtSombra txtOtroMode">{{CANT_USERS}}</p>
+        </div>
+        <div class="txtCantUsers">Instituciones utilizan <a class="txtNaranja txtSombra">Maproom</a></div>
+      </div>
+    </div>
+    <style>
+      .filainsti {
+        gap: 10px;
+        width: 80%;
+        margin: auto;
+        overflow-x: hidden;
+        flex-wrap: nowrap;
+        position: relative;
+        padding: 0.5rem;
+    }
+
+      .slider-pista {
+        display: flex;
+        width: calc(200px* 20);
+        gap: 10px;
+        animation: scroll 40s linear infinite reverse;
+    }
+
+    .logo img {
+      /*width: auto;*/
+      height: inherit;
+      border-radius: .5rem;
+      filter: none;
+  }
+
+    .slider-pista .logo {
+      flex: 0 0 200px;
+      height: 100px;
+      /*background-color: gray;*/
+    }
+
+      @keyframes scroll {
+        0% {
+          /*transform: translateX(833px)*/
+        }
+
+        100% {
+          transform: translateX(calc(-200px * 17))
+        }
+      }
+    </style>
+    <div class="filainsti">
+      <div class="slider-pista">
+        <div class="logo">
+          <img src="views/static/img/Instituciones/logosInstituciones/RobertoArlt/logotipo.jpg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/maproom/maproom_logo2.svg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/Instituciones/logosInstituciones/RobertoArlt/logotipo.jpg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/maproom/maproom_logo2.svg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/Instituciones/logosInstituciones/RobertoArlt/logotipo.jpg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/maproom/maproom_logo2.svg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/Instituciones/logosInstituciones/RobertoArlt/logotipo.jpg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/maproom/maproom_logo2.svg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/Instituciones/logosInstituciones/RobertoArlt/logotipo.jpg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/maproom/maproom_logo2.svg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/Instituciones/logosInstituciones/RobertoArlt/logotipo.jpg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/maproom/maproom_logo2.svg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/Instituciones/logosInstituciones/RobertoArlt/logotipo.jpg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/maproom/maproom_logo2.svg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/Instituciones/logosInstituciones/RobertoArlt/logotipo.jpg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/maproom/maproom_logo2.svg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/Instituciones/logosInstituciones/RobertoArlt/logotipo.jpg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/maproom/maproom_logo2.svg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/Instituciones/logosInstituciones/RobertoArlt/logotipo.jpg" alt="">
+        </div>
+        <div class="logo">
+          <img src="views/static/img/maproom/maproom_logo2.svg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="slider">
+      <div class="cuadro1">A</div>
+      <div class="cuadro2">B</div>
+      </div> -->
+
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slider = document.querySelector('.sliderMain');
+      const slides = document.querySelectorAll('.sliderMain img');
+      const slideWidth = slides[0].clientWidth; // Ancho de cada slide
+
+      let currentSlide = 0;
+      let slideInterval = setInterval(nextSlide, 2000); // Cambia la imagen cada 2 segundos
+
+      function nextSlide() {
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+          currentSlide = 0;
+        }
+        slider.scrollTo({
+          left: currentSlide * slideWidth,
+          behavior: 'smooth'
+        });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function (event) {
+          clearInterval(slideInterval);
+          setTimeout(function () {
+            slideInterval = setInterval(nextSlide, 2000);
+          }, 100); // Ajusta el tiempo de retraso según tus necesidades
+        });
+      });
+    });
+
+  </script>
+
+  @extern('footer')

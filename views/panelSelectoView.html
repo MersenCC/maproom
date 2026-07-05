@@ -1,0 +1,55 @@
+@extern('header')
+
+<head>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="views/static/css/panelSelecto.css">
+</head>
+
+@extern('navbar')
+    <div class="proyectos">
+        <div class="proyectosTitle">Bienvenido al Panel de Selecto | {{INSTITUCION}}</div>
+        <div class="contProyectos">
+            <div class="carta" onclick="location.href='panelDispositivos'">
+                <div class="iconoCarta">
+                    <span class="material-symbols-outlined iconoTamaPanelMenu">
+                        devices
+                    </span>
+                </div>
+                <div class="contenidoCarta">
+                    <h2>Panel  Dispositivos</h2>
+                </div>
+            </div>
+
+            <div class="carta" onclick="location.href='#'">
+                <div class="iconoCarta">
+                    <span class="material-symbols-outlined iconoTamaPanelMenu">
+                        campaign
+                    </span>
+                </div>
+                <div class="contenidoCarta">
+                    <h2>Crear  eventos</h2>
+                </div>
+            </div>
+
+            <div class="carta" onclick="location.href='#'">
+                <div class="iconoCarta">
+                    <span class="material-symbols-outlined iconoTamaPanelMenu">
+                        visibility
+                    </span>
+                </div>
+                <div class="contenidoCarta">
+                    <h2>Cantidad  Vistas</h2>
+                </div>
+            </div>
+        </div>     
+    </div>
+  </div>
+
+  
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+@extern('header')
+
+<head>
+    <link rel="stylesheet" href="views/static/css/solicitud.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+    <div class="container">
+        <article class="container-cards">
+            <section class="card">
+                <div class="imagen">
+                    <img src={{Imagen_Institucion}}>
+                </div>
+                <div class="cuerpo">
+                    <h1 id="institucion">{{Nombre_Institucion}}</h1>
+                    <div class="box">
+                        <strong>Usuario:</strong>
+                        {{Usuario_Institucion}}
+                    </div>
+                    <div class="box">
+                        <strong>Provincia:</strong>
+                        {{Pais_Institucion}}
+                    </div>
+                    <div class="box">
+                        <strong>Pais:</strong>
+                        {{Provincia_Institucion}}
+                    </div>
+                </div>
+            </section>
+            <section class="solicitud" id="solicitud">
+                <div class="icono-solicitud" id="icono-solicitud">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div class="mensaje" id="mensaje">
+                </div>
+                <div class="enlace" id="enlace">
+                </div>
+            </section>
+        </article>
+    </div>
+    <script src="./js/solicitud.js"></script>
+</body>
+</html>

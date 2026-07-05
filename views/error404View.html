@@ -1,0 +1,25 @@
+@extern('header')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="views/static/css/error.css">
+    <title>Error 404 - Página No Encontrada</title>
+</head>
+<body>
+    <h1>404</h1>
+    <div class="container">
+        <img src="views/static/img/maproom/maproom_icono.png" alt="Cargando..." class="image">
+        <div class="shadow"></div>
+    </div>
+    <p>Oh... Viajero intrépido, este camino está perdido en el mapa.</p>
+    <p>Has de regresar al punto de partida y retomar tu aventura.</p>
+
+	<button onclick="volver()">Volver</button>
+	<script>
+		function volver() {
+			window.history.back();
+		}
+	</script>
+</body>
+
+</html>

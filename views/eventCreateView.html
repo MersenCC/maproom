@@ -1,0 +1,226 @@
+@extern('header')
+<head>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="views/static/css/eventCreate.css">
+</head>
+@extern('navbar')
+        <div class="contenedorPanel">
+            <div class="busquedas">
+                
+                <button class="openBuscador" id="btn-abrir">Abrir buscador</button>
+                <div class="buscarInformacion">
+                    <input class="searchInfo" type="search" placeholder="Buscar Evento">
+                    <input type="submit" class="iconoInfo material-symbols-outlined" value="search">
+                </div>
+
+                <div class="buscarPaginas">
+                    1-14 of 54
+                    <div class="buscarPaginas">
+                        <div class="menu">
+                            
+                            
+                        </div>
+                    </div>
+                    <button class="btnPageAtr">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button class="btnPageSig">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <div class="filtros">
+                <label for="filterSelect" class="textFiltros">Seleccionar Filtros:</label>
+                <select id="filterSelect" class="dropdown-select">
+                    <option value="option0">Filtros</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <option value="option4">Option 4</option>
+                </select>
+            </div>
+
+            <div class="derecha">
+                <button id="event_create"class="crearEvento">Crear Eventos</button>
+            </div>
+
+            <!-- PANTALLA CREAR EVENTO -->
+            <div class="tabla_evento" id="event_table">
+                <div class="tabla_superior">
+                    <div class="titulo" style="text-align: center;">
+                        <h1>ASIGNAR EVENTO</h1>
+                        <button id="close_event_table" style="float: right;">Cerrar</button> <!-- Botón para cerrar -->
+                    </div>
+                    <div class="buscarInformacion">
+                        <input class="searchInfo" type="search" id="search" placeholder="Buscar dispositivo">
+                        <input type="submit" class="iconoInfo material-symbols-outlined" value="search">
+                    </div>
+                    <div class="results" id="results"></div>
+                </div>
+                <div class="tabla_inferior">
+                    <div class="tabla">
+                        <div class="infoTabla">
+                            <table id="name_device">
+                                <tr class="trPrincipal">
+                                    <th></th>
+                                    <th class="tituloPrincipal">Dispositivo</th>
+                                    <th>Asignar Evento</th>
+                                </tr>
+                                {{ALL_DEVICES}}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANTALLA ASIGNAR HORARIO -->
+            <div class="pantalla_assign" id="pantalla_assign">
+                <button id="close_assign_event" style="float: right;">Cerrar</button> <!-- Botón para cerrar -->
+                <form id="miFormulario" method="POST" action="eventCreate">
+                    <input type="hidden" name="slug" value="eventCreate"> <!-- Campo oculto -->
+                    <div class="titulo">
+                        <div id="user_tittle">
+                            <h1>ASIGNANDO EVENTO</h1>
+                        </div>
+                    </div>
+
+                    <div class="box_input">
+                        <label for="horario">Horario de Evento</label>
+                        <input name="horario" type="datetime-local" required>
+                    </div>
+
+                    <div class="box-input">
+                        <label for=""></label>
+                        <input name="nombre" type="text" placeholder="Nombre">
+                    </div>
+
+                    <div class="box-input">
+                        <label for=""></label>
+                        <input name="descripcion" type="text" placeholder="Descripcion">
+                    </div>
+
+                    <button name="guardar horario">Guardar</button>
+                </form>
+            </div>
+
+            <!-- MOSTRAR DISPOSITIVOS QUE YA TIENEN ASIGNADO UN EVENTOs -->
+            <div class="tabla">
+                <div class="infoTabla">
+                    <table id="deviceTable">
+                        <tr class="trPrincipal">
+                            <th></th>
+                            <th class="tituloPrincipal">Dispositivo</th>
+                            <th class="tituloPrincipal">Nombre</th>
+                            <th class="tituloPrincipal">Descripcion</th>
+                            <th class="tituloPrincipal">Evento Agregado</th>
+                            <th class="tituloPrincipal">Evento Asignado</th>
+                            <th>Realizar Cambios</th>
+                        </tr>
+                        {{EVENTO}}
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let event_create = document.getElementById("event_create");
+        let event_table = document.getElementById("event_table");
+        let close_event_table = document.getElementById("close_event_table");
+        let input = document.getElementById('search');
+        let resultsDiv = document.getElementById('results');
+        let cuadroAbierto = false;
+        let name_device = document.getElementById('name_device');
+        let close_assign_event = document.getElementById("close_assign_event");
+        let devices = [];
+
+        close_assign_event.addEventListener('click', function () {
+            cuadroAbierto = false; // Permitir abrir de nuevo
+            let pantalla_assign = document.getElementById('pantalla_assign');
+            pantalla_assign.style.display = 'none'; // Oculta la pantalla de asignación de evento
+        
+            // Eliminar el <h2>
+            let eventoElement = document.getElementById('evento_h2');
+            if (eventoElement) {
+                eventoElement.remove(); // Elimina el elemento <h2>
+            } else {
+                console.log("No se encontró el h2 para eliminar.");
+            }
+        
+            // Eliminar los inputs ocultos
+            let hiddenInputs = pantalla_assign.querySelectorAll('input[type="hidden"]');
+            hiddenInputs.forEach(input => input.remove()); // Elimina todos los inputs ocultos
+        });
+        
+        
+        
+        
+        
+
+        close_event_table.addEventListener('click', function () {
+            event_table.style.display = 'none'; // Oculta el cuadro de eventos
+        });
+
+        event_create.addEventListener('click', function () {
+            event.preventDefault();
+            event_table.style.display = 'block';
+
+            // Selecciona todas las filas de la tabla
+            let rows = document.querySelectorAll('#deviceTable tr');
+
+            // Itera sobre cada fila
+            rows.forEach(row => {
+                let nameCell = row.querySelector('td:nth-child(2)');
+                if (nameCell) {
+                    let deviceName = nameCell.textContent.trim();
+                    let deviceEntry = { name: deviceName };
+                    devices.push(deviceEntry);
+                }
+            });
+
+            // Manejo del evento de entrada
+            input.addEventListener('input', () => {
+                const query = input.value.toLowerCase();
+                resultsDiv.innerHTML = ''; // Limpia los resultados anteriores
+
+                if (query) {
+                    // Filtra los dispositivos basados en la consulta
+                    const filteredDevices = devices.filter(device => device.name.toLowerCase().includes(query));
+
+                    // Muestra los dispositivos filtrados
+                    filteredDevices.forEach(device => {
+                        const div = document.createElement('div');
+                        div.classList.add('result-item');
+                        div.textContent = device.name;
+                        resultsDiv.appendChild(div);
+                    });
+                }
+            });
+        });
+
+        function assign_event(assign) {
+            event.preventDefault();
+            if (!cuadroAbierto) {
+                cuadroAbierto = true;
+                let pantalla_assign = document.getElementById('pantalla_assign');
+                pantalla_assign.style.display = 'block'; // Muestra la ventana
+                let user_tittle = document.getElementById('user_tittle');
+                console.log(assign);
+                user_tittle.insertAdjacentHTML("afterend",
+                    `
+                    <input name="dispositivo" type="hidden" value="${assign.id}">
+                    <input name="idEvento" type="hidden" value="${assign.getAttribute('dataeventoid')}">
+                    <h2 id="evento_h2" name = "evento">Dispositivo: ${assign.name}</h2>
+                    `);
+            } else {
+                console.log('Ya hay un cuadro abierto');
+            }
+        }
+    </script>
+</body>
+
+</html>
